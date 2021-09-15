@@ -1,0 +1,9 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.162.0/containers/rust
+{
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"github.vscode-codeql",
+		"burkeholland.simple-timer"
+	]
+}
