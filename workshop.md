@@ -4,7 +4,9 @@ HacktivityCon, 18th Semptember 2021
 
 Presented by @pwntester
 
-Slack: #??????
+Discord: Hacker101
+Invite: https://discord.gg/rRn69jgB
+Room: #redteam-village
 
 Documentation & tools: https://codeql.github.com
 
@@ -790,5 +792,5 @@ select sink.getNode().(ScriptInjectionSink).getMethodAccess(), source, sink,
 # Next steps
 
 * For tools and documentation, visit https://codeql.github.com
-* Slack: ghsecuritylab.slack.com
+* Join our slack at ghsecuritylab.slack.com
 * Enable CodeQL analysis for your own repos

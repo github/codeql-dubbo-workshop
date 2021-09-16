@@ -10,10 +10,10 @@ For this workshop, you are invited to actively participate by writing CodeQL que
 
 1. Install Visual Studio Code. 
 
-2. Clone the repository (https://github.com/CodeQLWorkshops/DubboWorkshop) locally. For example with the command line
+2. Clone the repository (https://github.com/github/codeql-dubbo-workshop) locally. Make sure to get the submodules. For example with the command line
 
 ```
-git clone --recursive https://github.com/CodeQLWorkshops/DubboWorkshop.git
+git clone --recursive https://github.com/github/codeql-dubbo-workshop.git
 ```
 
 3. Open the repository folder in Visual Studio Code.
