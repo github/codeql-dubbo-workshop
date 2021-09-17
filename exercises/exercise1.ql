@@ -7,6 +7,5 @@ where
 select 
   source,
   source.getEnclosingCallable().getDeclaringType(),
+  source.getLocation().getFile().getBaseName(),
   source.getSourceType()
-
-

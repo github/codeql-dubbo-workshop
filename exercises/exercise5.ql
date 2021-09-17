@@ -13,6 +13,7 @@ class JavaBeanSerializeUtilDeserializeMethod extends Method {
       this.getDeclaringType().getName() =  "JavaBeanSerializeUtil"
   }
 }
+
 from MethodAccess ma
 where
   (
