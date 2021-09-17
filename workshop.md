@@ -467,7 +467,7 @@ select ma, ma.getEnclosingCallable().getDeclaringType()
 
 </details>
 
-## Exercise 6: Semantic sinks heatmap  
+# Exercise 6: Semantic sinks heatmap  
 
 This should give 23 results.
 
@@ -600,7 +600,7 @@ select
 
 </details>
 
-## Exercise 8: Script Injection
+# Exercise 8: Script Injection
 
 There should be 2 results.
 
