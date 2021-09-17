@@ -1,4 +1,4 @@
-# DubboWorkshop
+# Dubbo Workshop
 
 18th September 2021
 
