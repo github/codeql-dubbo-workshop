@@ -1,4 +1,4 @@
-# Dubbo Workshop
+# CodeQL as an audit oracle: Dubbo Workshop
 
 18th September 2021
 
