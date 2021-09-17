@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "[pwntester_dubbo_v2.7.8_3b2cfa9 source archive]",
+			"uri": "codeql-zip-archive://0-176/Users/pwntester/Library/Application Support/Code/User/workspaceStorage/dadf1408d827bac79f4b19534832602b/GitHub.vscode-codeql/dubbo_2.7.8/pwntester_dubbo_v2.7.8_3b2cfa9/src.zip"
+		}
+	],
+	"settings": {}
+}
