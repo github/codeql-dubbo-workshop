@@ -79,10 +79,7 @@ A source can be added gloabally, rather than to a specific TaintTracking configu
 ```ql
 class NettySource extends RemoteFlowSource {
   NettySource() {
-    exists(Method m |
-      ...
-      this.asParameter() = m.getParameter(1)
-    )
+    ...
   }
   override string getSourceType() { result = "Netty Source" }
 }
