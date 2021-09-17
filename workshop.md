@@ -22,7 +22,7 @@ Here are some hints.
 </details>
 
 
-# Task 0: Setup
+# Setup
 
 Follow the instructions in the [README](README.md) - you want to have [this repository](https://github.com/CodeQLWorkshops/DubboWorkshop) open in Visual Studio Code. Make sure that the extension and CodeQL CLI are the latest versions.
 
@@ -31,6 +31,10 @@ The databases are included in the snapshot in the [databases](databases/) folder
 If you already cloned the repo, `git pull` to get the latest changes.
 
 # Exercise 1: Find the Dubbo attack surface known to CodeQL
+
+- Find all sources in Dubbo codebase
+- Exclude those ones with paths matching */src/test/*
+- Select the source, enclosing class and source type
 
 You should get 10 results.
 
@@ -68,6 +72,8 @@ select
 </details>
 
 # Exercise 2: Model Netty sources
+
+- Model and enumerate all Netty sources
 
 You should get 6 results.
 
@@ -206,6 +212,9 @@ select
 
 # Exercise 3: Variant analysis (Taint Tracking)
 
+- Find all variants of CVE-2020-11995
+- Use the TaintTracking library
+
 You should get 8 results.
 
 <details>
@@ -343,6 +352,11 @@ select sink, source, sink, "unsafe deserialization"
 
 # Exercise 4: Semantic matches
 
+- Find all calls to `ObjectInput.read*()` methods semantically
+- Exclude calls to `read*` within the `ObjectInput` class itself
+- Exclude calls on files with a path matching `*/src/test/*`
+- Output the call, the enclosing method and the enclosing class
+
 This should give 14 results.
 
 <details>
@@ -406,6 +420,11 @@ select
 
 # Exercise 5: Scaling manual results
 
+- Find (semantically) all uses of:
+  - `PojoUtil.realize()`
+  - `JavaBeanSerializeUtil.deserialize()`
+- As usual exclude results on test files
+
 This should give 9 results.
 
 <details>
@@ -467,6 +486,10 @@ select ma, ma.getEnclosingCallable().getDeclaringType()
 
 # Exercise 6: Semantic sinks heatmap  
 
+- Find all calls to an unsafe deserialization sinks known to CodeQL
+- Reuse `UnsafeDeserializationSink` class from `semmle.code.java.security.UnsafeDeserializationQuery`
+- Select sink class, method and call enclosing class
+
 This should give 23 results.
 
 <details>
@@ -505,6 +528,10 @@ select
 </details>
 
 # Exercise 7: Configuration Centers
+
+- Model Dubbo Registry abstraction as a new source
+- Model Dubbo Configuration Center abstraction as a new source
+- List all these new sources
 
 There should be 10 results.
 
@@ -600,15 +627,9 @@ select
 
 # Exercise 8: Script Injection
 
-There should be 2 results.
-
-<details>
-<summary>Hints</summary>
-
-- Reuse the [experimental Script injection](https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-094/ScriptInjection.ql)
-- Add sources from step 7
-- import local `models.qll` file to bring some unmerged library taint steps
-- Add a new TaintStep for `URL`:
+- Reuse [`ScriptInjection`](https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-094/ScriptInjection.ql) query
+- Add sources from exercise 7
+- Add a new TaintStep for `URL` methods:
 ```ql
 class URLTaintStep extends TaintTracking::AdditionalTaintStep {
     override predicate step(DataFlow::Node n1, DataFlow::Node n2) {
@@ -621,8 +642,9 @@ class URLTaintStep extends TaintTracking::AdditionalTaintStep {
     }
 }
 ```
+- Import local `models.qll` file to bring some unmerged library taint steps
 
-</details>
+There should be 2 results.
 
 <details>
 <summary>Solution</summary>
