@@ -37,7 +37,7 @@ You should get 10 results.
 <details>
 <summary>Hints</summary>
 
-```
+```ql
 import java
 import semmle.code.java.dataflow.FlowSources
 
@@ -205,8 +205,6 @@ select
 * Look at query history
 
 # Exercise 3: Variant analysis (Taint Tracking)
-
-The `and` keyword combines two logical expressions.
 
 You should get 8 results.
 
