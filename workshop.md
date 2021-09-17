@@ -2,11 +2,11 @@
 
 HacktivityCon, 18th Semptember 2021
 
-Presented by @pwntester
+Presented by **@pwntester**
 
-Discord: Hacker101
+Discord: **Hacker101**
 Invite: https://discord.gg/rRn69jgB
-Room: #redteam-village
+Room: **#redteam-village**
 
 Documentation & tools: https://codeql.github.com
 
