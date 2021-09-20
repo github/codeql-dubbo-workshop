@@ -34,7 +34,7 @@ class InsecureConfig extends TaintTracking::Configuration {
 
   override predicate isSource(DataFlow::Node source) {
     exists(DubboCodecDecodeBodyMethod m |
-      m.getParameter(1) = source.asParameter()
+      m.getParameter([1,2]) = source.asParameter()
      )
   }
 
