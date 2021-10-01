@@ -1,6 +1,6 @@
 # CodeQL as an audit oracle workshop
 
-HacktivityCon, 18th Semptember 2021
+EkoParty, 5th and 6th October 2021
 
 Presented by **@pwntester**
 
