@@ -5,8 +5,7 @@ EkoParty, 5th and 6th October 2021
 Presented by **@pwntester**
 
 Discord: **Hacker101**
-Invite: https://discord.gg/rRn69jgB
-Room: **#redteam-village**
+Invite: https://discord.gg/HX2dgEFp
 
 Documentation & tools: https://codeql.github.com
 
