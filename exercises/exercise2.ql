@@ -16,16 +16,6 @@ class ChannelReadMethod extends Method {
   }
 }
 
-/** The ChannelInboundHandlerl.channelRead(1) source */
-class ChannelReadSource extends RemoteFlowSource {
-    ChannelReadSource() {
-      exists(ChannelReadMethod m |
-        this.asParameter() = m.getParameter(1)
-      )
-    }
-    override string getSourceType() { result = "Netty Handler Source" }
-}
-
 /** The ByteToMessageDecoder class */
 class ByteToMessageDecoder extends Class {
     ByteToMessageDecoder() {
@@ -39,6 +29,16 @@ class DecodeMethod extends Method {
       this.getName() = ["decode", "decodeLast"] and
       this.getDeclaringType() instanceof ByteToMessageDecoder
   }
+}
+
+/** The ChannelInboundHandlerl.channelRead(1) source */
+class ChannelReadSource extends RemoteFlowSource {
+    ChannelReadSource() {
+      exists(ChannelReadMethod m |
+        this.asParameter() = m.getParameter(1)
+      )
+    }
+    override string getSourceType() { result = "Netty Handler Source" }
 }
 
 /** The ByteToMessageDecoder.decode(1) source */
@@ -58,6 +58,7 @@ where
     source instanceof DecodeSource
   ) and
   not source.getLocation().getFile().getRelativePath().matches("%/src/test/%")
-select source, source.getEnclosingCallable().getDeclaringType(), source.getSourceType()
-
-  
+select
+  source,
+  source.getEnclosingCallable().getDeclaringType(),
+  source.getSourceType()
