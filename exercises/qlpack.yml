@@ -1,0 +1,3 @@
+name: codeql/dubbo-workshop
+dependencies:
+  codeql/java-all: '*'
